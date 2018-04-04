@@ -34,6 +34,9 @@
         关于作者 _Leslie Lamport_ 发表的这篇论文有个有趣的[历史](http://research.microsoft.com/en-us/um/people/lamport/pubs/pubs.html#lamport-paxos)：他在80年代就发明了这个算法，但直到1998年才发表出论文，原因是评审组不喜欢论文中的希腊寓言，而他又不愿修改。
     2. 甚至于论文发布以后，人们还是不怎么理解。_Lamport_ [再次尝试](http://research.microsoft.com/en-us/um/people/lamport/pubs/paxos-simple.pdf)，这次甚至包含了一些『无趣的细节』，关于如何在新型自动化计算机上应用算法的细节。
         但算法仍然没有得到广泛的理解。
+        关于作者 Leslie Lamport 发表的这篇论文有一个有趣的历史：算法在80年代就被创造了，但是直到1998年关于算法的论文才被发表，因为评审组不喜欢作者论文中的希腊寓言，而作者又不愿修改。
+    2. 甚至于论文发布以后，它还是不被人们理解。_Lamport_ 再次尝试，这次它包含了一些并不有趣的小细节，这些细节是关于如何使用这些新式的自动化的计算机的。
+        它仍然没有得到广泛的认可。
     3. [_Fred Schneider_](http://www.cs.cornell.edu/fbs/publications/SMSurvey.pdf)和[_Butler Lampson_](http://research.microsoft.com/en-us/um/people/blampson/58-consensus/Abstract.html)分别给出了更多细节关于在实时系统中如何应用`Paxos`。
     4. 一些`Google`的工程师总结了他们在`Chubby`中实现`Paxos`的[经验](http://www.cs.utexas.edu/users/lorenzo/corsi/cs380d/papers/paper2-1.pdf)。
     5. 我发现所有关于`Paxos`的论文理解起来很痛苦，但是值得我们费大力气弄懂。你不必忍受这样的痛苦了，因为日志结构的文件系统的大师[_John Ousterhout_](http://www.stanford.edu/~ouster/cgi-bin/papers/lfs.pdf)的[这个视频](https://www.youtube.com/watch?v=JEpsBg0AO6o) 让这一切变得相当的容易。这些一致性算法用展开的通信图表述的更好，而不是在论文中通过静态的描述来说明。颇为讽刺的是，这个视频录制的初衷是告诉人们`Paxos`很难理解。
