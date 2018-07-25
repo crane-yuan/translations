@@ -1,8 +1,14 @@
 结束语及参考资料
 =============================
 
-1. [学术论文、系统、讨论和博客](#学术论文系统讨论和博客)
-1. [一些相关的开源软件](#一些相关的开源软件)
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+1. [学术论文、系统、讨论和博客](#%E5%AD%A6%E6%9C%AF%E8%AE%BA%E6%96%87%E7%B3%BB%E7%BB%9F%E8%AE%A8%E8%AE%BA%E5%92%8C%E5%8D%9A%E5%AE%A2)
+1. [值得关注的开源软件](#%E5%80%BC%E5%BE%97%E5%85%B3%E6%B3%A8%E7%9A%84%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 如果你从头一直读到了这，那么我对日志的理解你大部分都知道了。
 
@@ -25,11 +31,14 @@
     这个链接并没有太多的信息，但 _Martin Odersky_ （`Scala`大拿）讲授的[这个课程](https://www.coursera.org/course/reactive)很精彩。
 - `Paxos`!
     1. 原论文在[这里](http://research.microsoft.com/en-us/um/people/lamport/pubs/lamport-paxos.pdf)。
+        关于作者 _Leslie Lamport_ 发表的这篇论文有个有趣的[历史](http://research.microsoft.com/en-us/um/people/lamport/pubs/pubs.html#lamport-paxos)：他在80年代就发明了这个算法，但直到1998年才发表出论文，原因是评审组不喜欢论文中的希腊寓言，而他又不愿修改。
+    2. 甚至于论文发布以后，人们还是不怎么理解。_Lamport_ [再次尝试](http://research.microsoft.com/en-us/um/people/lamport/pubs/paxos-simple.pdf)，这次甚至包含了一些『无趣的细节』，关于如何在新型自动化计算机上应用算法的细节。
+        但算法仍然没有得到广泛的理解。
         关于作者 Leslie Lamport 发表的这篇论文有一个有趣的历史：算法在80年代就被创造了，但是直到1998年关于算法的论文才被发表，因为评审组不喜欢作者论文中的希腊寓言，而作者又不愿修改。
     2. 甚至于论文发布以后，它还是不被人们理解。_Lamport_ 再次尝试，这次它包含了一些并不有趣的小细节，这些细节是关于如何使用这些新式的自动化的计算机的。
         它仍然没有得到广泛的认可。
     3. [_Fred Schneider_](http://www.cs.cornell.edu/fbs/publications/SMSurvey.pdf)和[_Butler Lampson_](http://research.microsoft.com/en-us/um/people/blampson/58-consensus/Abstract.html)分别给出了更多细节关于在实时系统中如何应用`Paxos`。
-    4. 一些`Google`的工程师总结了他们在`Chubby`中实施`Paxos`的[经验](http://www.cs.utexas.edu/users/lorenzo/corsi/cs380d/papers/paper2-1.pdf)。
+    4. 一些`Google`的工程师总结了他们在`Chubby`中实现`Paxos`的[经验](http://www.cs.utexas.edu/users/lorenzo/corsi/cs380d/papers/paper2-1.pdf)。
     5. 我发现所有关于`Paxos`的论文理解起来很痛苦，但是值得我们费大力气弄懂。你不必忍受这样的痛苦了，因为日志结构的文件系统的大师[_John Ousterhout_](http://www.stanford.edu/~ouster/cgi-bin/papers/lfs.pdf)的[这个视频](https://www.youtube.com/watch?v=JEpsBg0AO6o) 让这一切变得相当的容易。这些一致性算法用展开的通信图表述的更好，而不是在论文中通过静态的描述来说明。颇为讽刺的是，这个视频录制的初衷是告诉人们`Paxos`很难理解。
     6. [使用`Paxos`来构造规模一致的数据存储](http://arxiv.org/pdf/1103.2408.pdf)。这是一篇很棒的介绍使用日志来构造数据存储的文章，_Jun_ 是文章的共同作者之一，他也是`Kafka`最早期的工程师之一。
 - `Paxos`有很多的竞争者。如下诸项可以更进一步的映射到日志的实施，更适合于实用性的实施。
@@ -64,7 +73,7 @@
 - [复杂事件处理（`CEP`）](http://en.wikipedia.org/wiki/Complex_event_processing)没有人知道它的确切涵义或者它与流处理有什么不同。这些差异看起来集中在无序流和事件过滤、发现或者聚合上，但是依我之见，差别并不明显。我认为每个系统都有自己的优势。
 - [企业服务总线（`ESB`）](http://en.wikipedia.org/wiki/Enterprise_service_bus) —— 我认为企业服务总线的概念类似于我所描述的数据集成。在企业级软件社区中这个理念取得了一定程度的成功，对于从事网络和分布式基础架构的工程师们这个概念还是很陌生的。
 
-### 一些相关的开源软件
+### 值得关注的开源软件
 
 - [`Kafka`](http://kafka.apache.org/)是把日志作为服务的一个项目，是后边所列各项的基础。
 - [`Bookeeper`](http://zookeeper.apache.org/bookkeeper/) 和[`Hedwig`](http://zookeeper.apache.org/bookkeeper/) 另外的两个开源的『把日志作为服务』的项目。它们更关注的是数据库系统内部构件而不是事件数据。
@@ -77,7 +86,7 @@
 
 对于这一领域，我将持续关注，如果您知道一些我遗漏的内容，请您告知。
 
-最后我留给你的信息是这个： :smile_cat:  
+最后我留给你的信息是这个： 😸 
 [![The Log Song - Ren & Stimpy (Deadwood HoN)](images/log_song.png)](https://www.youtube.com/watch?v=2C7mNr5WMjA)
 
 -----------------
